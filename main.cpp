@@ -1,6 +1,15 @@
 #include <iostream>
 #include <vector>
 #include <math.h>
+#include "bit-manip.h"
+#include "array.h"
+#include "matrix.h"
+#include "String.h"
+#include "m-alloc.h"
+#include "linked-list.h"
+#include "Stack.h"
+#include "Queue.h"
+#include "divide_conquer_alg.h"
 
 using namespace std;
 
@@ -13,7 +22,6 @@ int search(vector<int> &arr, int x)
             return i;
         }
     }
-
     return -1;
 }
 
@@ -83,23 +91,10 @@ void loglogn(int n)
     }
 }
 
-unsigned int extractBits(unsigned int num, unsigned int pos, unsigned int k)
-{
-    unsigned int shifted = num >> pos;
-    unsigned int mask = (1 << k) - 1;
-
-    return shifted & mask;
-}
-
 int main()
 {
-
-    unsigned int num = 214;
-    unsigned int pos = 2;
-    unsigned int k = 3;
-    unsigned int result = extractBits(num, pos, k);
-
-    printf("Extracted bits: %d\n", result);
+    // Number of disks
+    int n = 3;
+    towerOfHanoi(n, 'A', 'B', 'C');
     return 0;
 }
-
